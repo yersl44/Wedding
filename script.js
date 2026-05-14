@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal, .gallery-item, .fade-in, .text-reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.hero *), .gallery-item, .fade-in:not(.hero *), .text-reveal:not(.hero *)').forEach(el => observer.observe(el));
 
     // Countdown Timer Logic
     const weddingDate = new Date('July 26, 2026 17:00:00').getTime();
@@ -87,21 +87,31 @@ document.addEventListener('DOMContentLoaded', () => {
         welcomeOverlay.classList.add('hidden');
         document.body.style.overflow = 'auto';
         
-        // Start music immediately on user interaction
+        // Start music
         if (audio) {
             audio.play().then(() => {
                 if (musicToggle) musicToggle.classList.add('playing');
             }).catch(e => {
-                console.log("Music play failed - browser might need more direct interaction", e);
-                // Try again on any click if it failed
-                document.addEventListener('click', () => {
+                console.log("Autoplay blocked, waiting for next interaction");
+                // Fallback for browsers that block play on scroll
+                const playOnNextAction = () => {
                     audio.play();
                     if (musicToggle) musicToggle.classList.add('playing');
-                }, { once: true });
+                    document.removeEventListener('click', playOnNextAction);
+                    document.removeEventListener('touchstart', playOnNextAction);
+                };
+                document.addEventListener('click', playOnNextAction);
+                document.addEventListener('touchstart', playOnNextAction);
             });
         }
+
+        // Trigger Hero Animations ONLY after opening
+        setTimeout(() => {
+            document.querySelectorAll('.hero .text-reveal, .hero .fade-in').forEach(el => {
+                el.classList.add('active');
+            });
+        }, 500); // Wait for overlay fade to start
         
-        // Ensure we are at the top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
