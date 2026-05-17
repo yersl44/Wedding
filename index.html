@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Үйлену тойына шақыру</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+
+    <!-- MUSIC PLAYER -->
+    <div class="music-player" id="music-toggle">
+        <div class="music-icon">🎵</div>
+        <audio id="bg-music" loop>
+            <source src="music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="subtitle text-reveal"><span>Үйлену тойға шақыру</span></p>
+            <h1 class="names text-reveal" id="hero-names"><span>Бекжан & Каусар</span></h1>
+            <div class="divider fade-in"></div>
+            <p class="date text-reveal"><span>26.07.2026</span></p>
+            
+            <!-- Countdown Timer -->
+            <div id="countdown" class="countdown-container fade-in">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <label>Күн</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <label>Сағат</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <label>Минут</label>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <label>Секунд</label>
+                </div>
+            </div>
+
+            <div class="scroll-down-hint fade-in">
+                <div class="mouse"></div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <section id="details" class="section details">
+        <div class="container overflow-hidden">
+            <div class="text-block reveal">
+                <h2 class="kz">Құрметті ағайын-туыс, құда-жекжат, нағашы-жиен, бөлелер, әріптестер, дос-жарандар,
+                    сыныптастар, көршілер!</h2>
+                <p class="intro-text kz">
+                    Ұлым Бекжан мен келінім Каусардың үйлену тойына арналған ақ дастарханның қадірлі қонағы болуға
+                    шақырамыз!
+                </p>
+            </div>
+
+            <div class="rsvp-section reveal">
+                <h2 class="kz">Тойға келесіз бе?</h2>
+                <div class="rsvp-form">
+                    <div class="input-group">
+                        <input type="text" id="guest-name" placeholder="Есіміңізді жазыңыз..." class="rsvp-input">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="guest-count" placeholder="Қанша адам келесіздер?" class="rsvp-input" min="1" max="10">
+                    </div>
+                    <div class="rsvp-buttons">
+                        <button class="rsvp-btn yes" onclick="submitRSVP('yes')">Келемін</button>
+                        <button class="rsvp-btn no" onclick="submitRSVP('no')">Келе алмаймын</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WISHES SECTION -->
+            <div class="wishes-section reveal">
+                <h2 class="kz">Тілек білдіру</h2>
+                <p class="section-desc">Бізге арналған жылы лебіздеріңізді қалдыра кетсеңіздер болады</p>
+                
+                <div class="wish-form-container">
+                    <input type="text" id="wish-name" placeholder="Есіміңіз..." class="rsvp-input">
+                    <textarea id="wish-text" placeholder="Сіздің тілегіңіз..." class="rsvp-input textarea"></textarea>
+                    <button class="rsvp-btn yes" onclick="submitWish()">Тілек жіберу</button>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-item reveal">
+                    <div class="icon">🕒</div>
+                    <div class="info-text">
+                        <h3>Қашан</h3>
+                        <p><strong>26 шілде 2026 жыл</strong></p>
+                        <p>17:00 — Тойдың басталуы</p>
+                    </div>
+                </div>
+                <div class="info-item reveal">
+                    <div class="icon">📍</div>
+                    <div class="info-text">
+                        <h3>Қайда</h3>
+                        <p class="venue-name">Дастархан мейрамханасы, Талдықорған қаласы, Желтоқсан көшесі 228</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="calendar-container reveal">
+                <h2 class="kz">Шілде 2026</h2>
+                <div class="calendar" id="calendar">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section section reveal">
+        <div class="container">
+            <h2 class="kz">Қалай жетуге болады?</h2>
+            <div class="map-buttons">
+                <a href="https://yandex.kz/maps/-/CPrIUNmA" target="_blank" class="map-btn yandex">
+                    <span class="btn-icon">🗺️</span>
+                    Yandex Maps
+                </a>
+                <a href="https://go.2gis.com/Nvss1" target="_blank" class="map-btn dgis">
+                    <span class="btn-icon">📍</span>
+                    2GIS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery section reveal">
+        <div class="container">
+            <h2 class="kz">Біздің оқиғамыз</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="--i:1"><img src="img1.png" alt="Photo 1" loading="lazy"></div>
+                <div class="gallery-item" style="--i:2"><img src="img2.png" alt="Photo 2" loading="lazy"></div>
+                <div class="gallery-item" style="--i:3"><img src="img3.png" alt="Photo 3" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="kz">Сіздерді асыға күтеміз!</p>
+            <div class="divider"></div>
+            <p class="names-small">Бекжан & Каусар</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
