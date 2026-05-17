@@ -1,52 +1,10 @@
 :root {
-    /* ==========================================================================
-       ВЫБЕРИТЕ ОДИН ИЗ ВАРИАНТОВ ЦВЕТА НИЖЕ (просто раскомментируйте нужный):
-       ========================================================================== */
-
-    /* ВАРИАНТ 1: Глубокий Королевский Синий (Royal Navy) - Максимальная насыщенность и читаемость */
     --bg-color: #fdfaf6;
-    --accent-color: #001f3f; /* Очень глубокий благородный темно-синий */
-    --text-main: #001122;     /* Почти черный сапфировый для идеальной контрастности */
-    --text-soft: #082d56;     /* Насыщенный чернильно-синий для второстепенного текста */
+    --accent-color: #001f3f; /* Deep Royal Navy */
+    --text-main: #001122;     /* Almost black sapphire for perfect legibility */
+    --text-soft: #082d56;     /* Deep ink blue for secondary text */
     --white: #ffffff;
     --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-    /* ВАРИАНТ 2: Роскошный Полуночный Синий (Midnight Indigo) - Мягкий, но очень глубокий контраст
-    --bg-color: #fdfaf6;
-    --accent-color: #0d1b2a;
-    --text-main: #1b263b;
-    --text-soft: #415a77;
-    --white: #ffffff;
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    */
-
-    /* ВАРИАНТ 3: Насыщенный Прусский Синий (Prussian Luxury) - Яркие глубокие синие тона
-    --bg-color: #fdfaf6;
-    --accent-color: #002b49;
-    --text-main: #001829;
-    --text-soft: #0b3c5d;
-    --white: #ffffff;
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    */
-}
-
-/* --- COLOR THEME PALETTES (FOR DIRECT COMPARISON) --- */
-.palette-royal {
-    --accent-color: #001f3f; /* Вариант 1: Глубокий Королевский Синий (Royal Navy) */
-    --text-main: #001122;
-    --text-soft: #082d56;
-}
-
-.palette-midnight {
-    --accent-color: #0d1b2a; /* Вариант 2: Роскошный Полуночный Синий (Midnight Indigo) */
-    --text-main: #1b263b;
-    --text-soft: #415a77;
-}
-
-.palette-prussian {
-    --accent-color: #002b49; /* Вариант 3: Насыщенный Прусский Синий (Prussian Luxury) */
-    --text-main: #001829;
-    --text-soft: #0b3c5d;
 }
 
 
@@ -133,6 +91,7 @@ h3,
     font-size: clamp(3rem, 10vw, 6rem);
     margin: 10px 0;
     font-weight: 300;
+    color: #af957a;
 }
 
 .subtitle,
@@ -308,7 +267,7 @@ h3,
     line-height: 1.35;
     color: var(--accent-color);
     margin: 20px auto 25px;
-    font-weight: 600;
+    font-weight: 400; /* Made thinner */
 }
 
 .details .ru {
@@ -319,10 +278,10 @@ h3,
 .intro-text {
     max-width: 800px;
     margin: 20px auto;
-    font-size: 1.65rem;
-    font-weight: 500;
-    color: var(--text-soft);
-    line-height: 1.5;
+    font-size: 1.8rem; /* Made slightly larger */
+    font-weight: 700; /* Bold */
+    color: var(--accent-color); /* Fully Royal Blue */
+    line-height: 1.55;
 }
 
 .info-grid {
@@ -330,6 +289,12 @@ h3,
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 60px;
+}
+
+.info-grid-single {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .info-item {
@@ -354,13 +319,19 @@ h3,
 }
 
 .info-text h3 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
     color: var(--accent-color);
 }
 
+.info-text p {
+    font-size: 1.35rem;
+    color: var(--text-soft);
+    margin-top: 5px;
+}
+
 .venue-name {
-    font-size: 1.3rem;
+    font-size: 1.55rem;
     font-weight: 600;
     margin-top: 10px;
     line-height: 1.4;
@@ -385,6 +356,27 @@ h3,
     width: 100%;
 }
 
+.rsvp-top-hint {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 5vw, 2.32rem) !important; /* Made 45% larger */
+    color: #af957a; /* Elegantly styled brown */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.rsvp-title-smaller {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 2px !important;
+    color: var(--text-main);
+    text-transform: uppercase;
+    font-size: clamp(1.22rem, 3.5vw, 1.62rem) !important; /* Made 30% smaller than top hint */
+    margin-bottom: 15px;
+}
+
 .rsvp-title {
     font-family: 'Cormorant Garamond', serif !important;
     font-size: clamp(2rem, 5vw, 2.5rem) !important;
@@ -398,14 +390,14 @@ h3,
 
 .rsvp-subtitle {
     font-family: 'Cormorant Garamond', serif !important;
-    font-size: clamp(1rem, 3vw, 1.25rem) !important;
+    font-size: clamp(1.04rem, 3.1vw, 1.3rem) !important; /* Made 10% smaller, perfectly matching wishes subtitle */
     line-height: 1.5;
     letter-spacing: 1px;
     color: var(--text-soft);
     margin: 20px auto 35px;
     max-width: 550px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 450;
 }
 
 .rsvp-input {
@@ -637,9 +629,11 @@ h3,
 /* --- GALLERY --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin: 40px auto 0;
+    max-width: 800px;
+    justify-content: center;
 }
 
 .gallery-item {
@@ -866,15 +860,25 @@ h3,
     }
 
     .info-text h3 {
-        font-size: 1.7rem;
+        font-size: 1.95rem !important;
     }
 
     .info-text p {
-        font-size: 1.2rem;
+        font-size: 1.35rem !important;
     }
 
     .venue-name {
-        font-size: 1.3rem;
+        font-size: 1.45rem !important;
+    }
+
+    .rsvp-top-hint {
+        font-size: 1.8rem !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .rsvp-title-smaller {
+        font-size: 1.25rem !important;
+        line-height: 1.35 !important;
     }
 
     .rsvp-title {
@@ -882,7 +886,7 @@ h3,
     }
 
     .rsvp-subtitle {
-        font-size: 0.95rem !important;
+        font-size: 1.05rem !important;
         margin-bottom: 25px;
     }
 
