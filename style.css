@@ -1,12 +1,54 @@
 :root {
+    /* ==========================================================================
+       ВЫБЕРИТЕ ОДИН ИЗ ВАРИАНТОВ ЦВЕТА НИЖЕ (просто раскомментируйте нужный):
+       ========================================================================== */
+
+    /* ВАРИАНТ 1: Глубокий Королевский Синий (Royal Navy) - Максимальная насыщенность и читаемость */
     --bg-color: #fdfaf6;
-    --accent-color: #003366;
-    /* Rich Deep Blue */
-    --text-main: #003366;
-    --text-soft: #1a4a7a;
+    --accent-color: #001f3f; /* Очень глубокий благородный темно-синий */
+    --text-main: #001122;     /* Почти черный сапфировый для идеальной контрастности */
+    --text-soft: #082d56;     /* Насыщенный чернильно-синий для второстепенного текста */
     --white: #ffffff;
     --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* ВАРИАНТ 2: Роскошный Полуночный Синий (Midnight Indigo) - Мягкий, но очень глубокий контраст
+    --bg-color: #fdfaf6;
+    --accent-color: #0d1b2a;
+    --text-main: #1b263b;
+    --text-soft: #415a77;
+    --white: #ffffff;
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    */
+
+    /* ВАРИАНТ 3: Насыщенный Прусский Синий (Prussian Luxury) - Яркие глубокие синие тона
+    --bg-color: #fdfaf6;
+    --accent-color: #002b49;
+    --text-main: #001829;
+    --text-soft: #0b3c5d;
+    --white: #ffffff;
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    */
 }
+
+/* --- COLOR THEME PALETTES (FOR DIRECT COMPARISON) --- */
+.palette-royal {
+    --accent-color: #001f3f; /* Вариант 1: Глубокий Королевский Синий (Royal Navy) */
+    --text-main: #001122;
+    --text-soft: #082d56;
+}
+
+.palette-midnight {
+    --accent-color: #0d1b2a; /* Вариант 2: Роскошный Полуночный Синий (Midnight Indigo) */
+    --text-main: #1b263b;
+    --text-soft: #415a77;
+}
+
+.palette-prussian {
+    --accent-color: #002b49; /* Вариант 3: Насыщенный Прусский Синий (Prussian Luxury) */
+    --text-main: #001829;
+    --text-soft: #0b3c5d;
+}
+
 
 * {
     margin: 0;
