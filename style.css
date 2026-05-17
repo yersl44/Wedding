@@ -33,7 +33,7 @@ body::before {
     background: linear-gradient(rgba(253, 250, 246, 0.4), rgba(253, 250, 246, 0.4)), url('background.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(8px);
+    filter: blur(3px);
     z-index: -1;
     pointer-events: none;
 }
