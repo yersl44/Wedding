@@ -74,18 +74,30 @@
             </div>
 
             <div class="rsvp-section reveal">
-                <h2 class="kz">Тойға келесіз бе?</h2>
+                <h2 class="kz rsvp-title">ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ<br>СҰРАЙМЫЗ</h2>
+                <p class="rsvp-subtitle">ЕГЕРДЕ ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІҢІЗДІ ЖАЗЫҢЫЗ</p>
                 <div class="rsvp-form">
                     <div class="input-group">
-                        <input type="text" id="guest-name" placeholder="Есіміңізді жазыңыз..." class="rsvp-input">
+                        <input type="text" id="guest-name" placeholder="ЕСІМІҢІЗДІ ЖАЗЫҢЫЗ" class="rsvp-input">
                     </div>
-                    <div class="input-group">
-                        <input type="number" id="guest-count" placeholder="Қанша адам келесіздер?" class="rsvp-input" min="1" max="10">
+                    <div class="rsvp-options">
+                        <label class="rsvp-option">
+                            <input type="radio" name="rsvp-status" value="Әрине, келемін" checked>
+                            <span class="custom-radio"></span>
+                            <span class="option-text">ӘРИНЕ, КЕЛЕМІН</span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="rsvp-status" value="Жұбайыммен келеміз">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">ЖҰБАЙЫММЕН КЕЛЕМІЗ</span>
+                        </label>
+                        <label class="rsvp-option">
+                            <input type="radio" name="rsvp-status" value="Өкінішке орай, келе алмаймын">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">ӨКІНІШКЕ ОРАЙ, КЕЛЕ АЛМАЙМЫН</span>
+                        </label>
                     </div>
-                    <div class="rsvp-buttons">
-                        <button class="rsvp-btn yes" onclick="submitRSVP('yes')">Келемін</button>
-                        <button class="rsvp-btn no" onclick="submitRSVP('no')">Келе алмаймын</button>
-                    </div>
+                    <button class="rsvp-submit-btn" onclick="submitRSVP()">ЖАУАПТЫ ЖІБЕРУ</button>
                 </div>
             </div>
 
@@ -158,9 +170,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="kz">Сіздерді асыға күтеміз!</p>
+            <p class="footer-note-top">ІЗГІ НИЕТПЕН</p>
+            <p class="footer-host">ТОЙ ИЕСІ:</p>
+            <p class="footer-names-italic">Жанна</p>
             <div class="divider"></div>
-            <p class="names-small">Бекжан & Каусар</p>
+            <p class="footer-note-bottom-italic">Қуанышымызға<br>ортақ болыңыздар!</p>
         </div>
     </footer>
 
