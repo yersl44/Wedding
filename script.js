@@ -210,7 +210,7 @@ async function submitWish() {
     };
 
     const submitBtn = document.querySelector('.wish-form-container button');
-    submitBtn.innerText = "Жіберілуде...";
+    submitBtn.innerText = "ЖІБЕРІЛУДЕ...";
     submitBtn.disabled = true;
 
     try {
@@ -224,12 +224,12 @@ async function submitWish() {
         alert("Тілегіңіз қабылданды! Рахмет!");
         nameInput.value = "";
         textInput.value = "";
-        submitBtn.innerText = "Тілек жіберу";
+        submitBtn.innerText = "ТІЛЕК ЖІБЕРУ";
         submitBtn.disabled = false;
     } catch (error) {
         console.error('Error!', error.message);
         alert('Қате орын алды.');
-        submitBtn.innerText = "Тілек жіберу";
+        submitBtn.innerText = "ТІЛЕК ЖІБЕРУ";
         submitBtn.disabled = false;
     }
 }
