@@ -262,7 +262,7 @@ h3,
 
 .details-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-size: clamp(2.1rem, 6vw, 2.9rem);
     line-height: 1.35;
     color: var(--accent-color);
     margin: 20px auto 25px;
@@ -805,8 +805,8 @@ h3,
     }
 
     .details-title {
-        font-size: 1.45rem !important;
-        line-height: 1.15 !important;
+        font-size: 1.7rem !important;
+        line-height: 1.18 !important;
         margin-bottom: 20px !important;
     }
 
