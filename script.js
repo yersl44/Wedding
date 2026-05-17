@@ -133,11 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-async function submitRSVP(status) {
+async function submitRSVP() {
     const nameInput = document.getElementById('guest-name');
-    const countInput = document.getElementById('guest-count');
     const name = nameInput ? nameInput.value.trim() : "";
-    const count = countInput ? countInput.value : "1";
     const rsvpForm = document.querySelector('.rsvp-form');
 
     if (!name) {
@@ -146,10 +144,24 @@ async function submitRSVP(status) {
         return;
     }
 
+    const selectedOption = document.querySelector('input[name="rsvp-status"]:checked');
+    if (!selectedOption) {
+        alert("Өтініш, жауап нұсқасын таңдаңыз!");
+        return;
+    }
+
+    const statusValue = selectedOption.value;
+    let count = "1";
+    if (statusValue === "Жұбайыммен келеміз") {
+        count = "2";
+    } else if (statusValue === "Өкінішке орай, келе алмаймын") {
+        count = "0";
+    }
+
     const data = {
         type: 'rsvp',
         name: name,
-        status: status,
+        status: statusValue,
         count: count,
         timestamp: new Date().toLocaleString()
     };
