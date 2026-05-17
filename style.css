@@ -91,7 +91,7 @@ h3,
     font-size: clamp(3rem, 10vw, 6rem);
     margin: 10px 0;
     font-weight: 300;
-    color: #af957a;
+    color: #8c6239; /* Slightly darker and richer brown */
 }
 
 .subtitle,
@@ -377,15 +377,23 @@ h3,
     margin-bottom: 15px;
 }
 
-.rsvp-title {
+.rsvp-title, .wishes-title {
     font-family: 'Cormorant Garamond', serif !important;
     font-size: clamp(2rem, 5vw, 2.5rem) !important;
     font-weight: 500 !important;
     line-height: 1.3 !important;
     letter-spacing: 2px !important;
-    color: var(--text-main);
     text-transform: uppercase;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+.rsvp-title {
+    color: var(--text-main);
+}
+
+.wishes-title {
+    color: #af957a !important; /* Elegant gold-brown color */
 }
 
 .rsvp-subtitle {
@@ -682,7 +690,7 @@ h3,
 }
 
 .footer-note-top {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Increased by 20% */
     font-family: 'Cormorant Garamond', serif;
     color: var(--text-soft);
     letter-spacing: 3px;
@@ -692,7 +700,7 @@ h3,
 }
 
 .footer-host {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Increased by 20% */
     font-family: 'Cormorant Garamond', serif;
     color: var(--text-soft);
     letter-spacing: 3px;
@@ -705,7 +713,7 @@ h3,
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3rem, 10vw, 4.8rem);
     font-style: italic;
-    color: var(--accent-color);
+    color: #af957a; /* Elegant brown color */
     margin: 15px auto 25px;
     line-height: 1.2;
     font-weight: 400;
@@ -951,12 +959,12 @@ h3,
     }
 
     .footer-note-top {
-        font-size: 1.1rem;
+        font-size: 1.32rem !important;
         letter-spacing: 2px;
     }
 
     .footer-host {
-        font-size: 1.1rem;
+        font-size: 1.32rem !important;
         letter-spacing: 2px;
         margin-bottom: 15px;
     }
