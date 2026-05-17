@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Үйлену тойына шақыру</title>
+    <title>Бекжан & Каусар - Үйлену тойына шақыру</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +17,6 @@
 
 <body>
 
-
     <!-- MUSIC PLAYER -->
     <div class="music-player" id="music-toggle">
         <div class="music-icon">🎵</div>
@@ -27,7 +26,8 @@
         </audio>
     </div>
 
-    <header class="hero palette-royal">
+    <!-- 1. ШАҚЫРУ СЫРТЫ (Hero Section) -->
+    <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="subtitle text-reveal"><span>Үйлену тойға шақыру</span></p>
@@ -59,22 +59,77 @@
                 <div class="mouse"></div>
             </div>
         </div>
-        </div>
     </header>
 
-    <section id="details" class="section details palette-midnight">
+    <!-- 2. ШАҚЫРУДЫҢ ӨЗІ (Details Section) -->
+    <section id="details" class="section details">
         <div class="container overflow-hidden">
             <div class="text-block reveal">
                 <h2 class="kz details-title">Құрметті ағайын-туыс, құда-жекжат, нағашы-жиен, бөлелер, әріптестер, дос-жарандар,
                     сыныптастар, көршілер!</h2>
                 <p class="intro-text kz">
-                    Ұлым Бекжан мен келінім Каусардың үйлену тойына арналған ақ дастарханның қадірлі қонағы болуға
-                    шақырамыз!
+                    Ұлым Бекжан мен келінім Каусардың<br>үйлену тойына арналған ақ дастарханның қадірлі қонағы болуға шақырамыз!
                 </p>
             </div>
+        </div>
+    </section>
 
-            <div class="rsvp-section reveal">
-                <h2 class="kz rsvp-title">ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ<br>СҰРАЙМЫЗ</h2>
+    <!-- 3. ҚАШАН (When Section + Calendar) -->
+    <section id="when" class="section when reveal">
+        <div class="container">
+            <div class="info-grid-single" style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <div class="info-item reveal" style="width: 100%; max-width: 500px;">
+                    <div class="icon">🕒</div>
+                    <div class="info-text">
+                        <h3>Қашан</h3>
+                        <p><strong>26 шілде 2026 жыл</strong></p>
+                        <p>17:00 — Тойдың басталуы</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar Section -->
+            <div class="calendar-container reveal">
+                <h2 class="kz">Шілде 2026</h2>
+                <div class="calendar" id="calendar">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ҚАЙДА БОЛАДЫ (Where Section + Map) -->
+    <section id="where" class="section where reveal">
+        <div class="container">
+            <div class="info-grid-single" style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <div class="info-item reveal" style="width: 100%; max-width: 500px;">
+                    <div class="icon">📍</div>
+                    <div class="info-text">
+                        <h3>Қайда</h3>
+                        <p class="venue-name">Дастархан мейрамханасы, Талдықорған қаласы, Желтоқсан көшесі 228</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-buttons reveal">
+                <a href="https://yandex.kz/maps/-/CPrIUNmA" target="_blank" class="map-btn yandex">
+                    <span class="btn-icon">🗺️</span>
+                    Yandex Maps
+                </a>
+                <a href="https://go.2gis.com/Nvss1" target="_blank" class="map-btn dgis">
+                    <span class="btn-icon">📍</span>
+                    2GIS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. САУАЛНАМА (RSVP Section) -->
+    <section id="rsvp" class="section rsvp reveal">
+        <div class="container">
+            <div class="rsvp-section">
+                <p class="rsvp-top-hint">Қонақтарға арналған сауалнама</p>
+                <h2 class="kz rsvp-title-smaller">ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ<br>СҰРАЙМЫЗ</h2>
                 <p class="rsvp-subtitle">ЕГЕРДЕ ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІҢІЗДІ ЖАЗЫҢЫЗ</p>
                 <div class="rsvp-form">
                     <div class="input-group">
@@ -82,7 +137,7 @@
                     </div>
                     <div class="rsvp-options">
                         <label class="rsvp-option">
-                            <input type="radio" name="rsvp-status" value="Әрине, келемін" checked>
+                            <input type="radio" name="rsvp-status" value="Әрине, келемін">
                             <span class="custom-radio"></span>
                             <span class="option-text">ӘРИНЕ, КЕЛЕМІН</span>
                         </label>
@@ -100,9 +155,13 @@
                     <button class="rsvp-submit-btn" onclick="submitRSVP()">ЖАУАПТЫ ЖІБЕРУ</button>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- WISHES SECTION -->
-            <div class="wishes-section reveal">
+    <!-- 6. ТІЛЕК (Wishes Section) -->
+    <section id="wishes" class="section wishes reveal">
+        <div class="container">
+            <div class="wishes-section">
                 <h2 class="kz rsvp-title">ТІЛЕК БІЛДІРУ</h2>
                 <p class="rsvp-subtitle">БІЗГЕ АРНАЛҒАН ЖЫЛЫ ЛЕБІЗДЕРІҢІЗДІ ҚАЛДЫРА КЕТСЕҢІЗДЕР БОЛАДЫ</p>
                 
@@ -116,63 +175,21 @@
                     <button class="rsvp-submit-btn" onclick="submitWish()">ТІЛЕК ЖІБЕРУ</button>
                 </div>
             </div>
-
-            <div class="info-grid">
-                <div class="info-item reveal">
-                    <div class="icon">🕒</div>
-                    <div class="info-text">
-                        <h3>Қашан</h3>
-                        <p><strong>26 шілде 2026 жыл</strong></p>
-                        <p>17:00 — Тойдың басталуы</p>
-                    </div>
-                </div>
-                <div class="info-item reveal">
-                    <div class="icon">📍</div>
-                    <div class="info-text">
-                        <h3>Қайда</h3>
-                        <p class="venue-name">Дастархан мейрамханасы, Талдықорған қаласы, Желтоқсан көшесі 228</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Calendar Section -->
-            <div class="calendar-container reveal">
-                <h2 class="kz">Шілде 2026</h2>
-                <div class="calendar" id="calendar">
-                    <!-- JS will populate this -->
-                </div>
-            </div>
         </div>
     </section>
 
-    <section class="map-section section reveal palette-prussian">
+    <!-- ГАЛЕРЕЯ -->
+    <section class="gallery section reveal">
         <div class="container">
-            <h2 class="kz">Қалай жетуге болады?</h2>
-            <div class="map-buttons">
-                <a href="https://yandex.kz/maps/-/CPrIUNmA" target="_blank" class="map-btn yandex">
-                    <span class="btn-icon">🗺️</span>
-                    Yandex Maps
-                </a>
-                <a href="https://go.2gis.com/Nvss1" target="_blank" class="map-btn dgis">
-                    <span class="btn-icon">📍</span>
-                    2GIS
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery section reveal palette-royal">
-        <div class="container">
-            <h2 class="kz">Біздің оқиғамыз</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" style="--i:1"><img src="img1.png" alt="Photo 1" loading="lazy"></div>
                 <div class="gallery-item" style="--i:2"><img src="img2.png" alt="Photo 2" loading="lazy"></div>
                 <div class="gallery-item" style="--i:3"><img src="img3.png" alt="Photo 3" loading="lazy"></div>
             </div>
         </div>
     </section>
 
-    <footer class="footer palette-midnight">
+    <!-- 7. КІМ ТОЙ ИЕСІ (Footer Section) -->
+    <footer class="footer">
         <div class="container">
             <p class="footer-note-top">ІЗГІ НИЕТПЕН</p>
             <p class="footer-host">ТОЙ ИЕСІ:</p>
