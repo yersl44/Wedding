@@ -95,8 +95,8 @@ h3,
 
 .subtitle,
 .subtitle-ru {
-    font-size: clamp(1.2rem, 4vw, 3rem);
-    letter-spacing: 3px;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 5px;
 }
@@ -109,8 +109,8 @@ h3,
 }
 
 .date {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    letter-spacing: 5px;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    letter-spacing: 6px;
     margin-bottom: 30px;
 }
 
@@ -260,6 +260,15 @@ h3,
     color: var(--accent-color);
 }
 
+.details-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    line-height: 1.35;
+    color: var(--accent-color);
+    margin: 20px auto 25px;
+    font-weight: 600;
+}
+
 .details .ru {
     margin-bottom: 20px;
     opacity: 0.9;
@@ -268,7 +277,7 @@ h3,
 .intro-text {
     max-width: 800px;
     margin: 20px auto;
-    font-size: 1.4rem;
+    font-size: 1.65rem;
     font-weight: 500;
     color: var(--text-soft);
     line-height: 1.5;
@@ -360,10 +369,10 @@ h3,
 .rsvp-input {
     width: 100%;
     max-width: 450px;
-    padding: 16px 25px;
+    padding: 18px 30px;
     border: 1.5px solid rgba(0, 51, 102, 0.3);
     border-radius: 50px;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 1.5px;
     outline: none;
@@ -457,10 +466,10 @@ h3,
     background-color: #af957a;
     color: var(--white);
     border: none;
-    padding: 16px 40px;
+    padding: 18px 45px;
     border-radius: 50px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     letter-spacing: 2px;
     font-weight: 600;
     cursor: pointer;
@@ -764,13 +773,13 @@ h3,
     }
 
     .subtitle, .subtitle-ru {
-        font-size: 1.1rem;
-        letter-spacing: 2px;
+        font-size: 1.55rem !important;
+        letter-spacing: 3px !important;
     }
 
     .date {
-        font-size: 1.3rem;
-        letter-spacing: 3px;
+        font-size: 1.8rem !important;
+        letter-spacing: 4px !important;
     }
 
     .countdown-container {
@@ -791,8 +800,14 @@ h3,
     }
 
     .intro-text {
-        font-size: 1.3rem;
-        line-height: 1.6;
+        font-size: 1.5rem !important;
+        line-height: 1.45 !important;
+    }
+
+    .details-title {
+        font-size: 1.45rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 20px !important;
     }
 
     .details h2, .rsvp-section h2, .wishes-section h2,
@@ -830,8 +845,8 @@ h3,
     }
 
     .rsvp-input {
-        font-size: 1.1rem;
-        padding: 14px;
+        font-size: 1.2rem !important;
+        padding: 16px 20px !important;
     }
 
     .rsvp-options {
@@ -856,8 +871,8 @@ h3,
     }
 
     .rsvp-submit-btn {
-        font-size: 1.15rem;
-        padding: 14px 20px;
+        font-size: 1.25rem !important;
+        padding: 16px 30px !important;
         width: 100%;
         max-width: unset;
     }
@@ -921,22 +936,7 @@ h3,
     width: 100%;
 }
 
-.rsvp-input {
-    width: 100%;
-    padding: 15px 20px;
-    border: 1px solid rgba(0, 51, 102, 0.1);
-    border-radius: 12px;
-    font-family: inherit;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    transition: var(--transition);
-    outline: none;
-}
 
-.rsvp-input:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 51, 102, 0.05);
-}
 
 .rsvp-input.textarea {
     min-height: 120px;
@@ -956,12 +956,18 @@ h3,
 }
 
 .wish-form-container {
-    max-width: 500px;
-    margin: 0 auto 60px;
-    background: var(--white);
-    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto 60px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.05);
+    border: 1px solid rgba(0, 51, 102, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
 }
 
 /* --- MUSIC PLAYER --- */
